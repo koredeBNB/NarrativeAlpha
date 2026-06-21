@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://narrativealpha/reference/strategy_schema.json",
+  "title": "NarrativeAlpha strategy spec",
+  "description": "Typed, backtestable description of the NarrativeAlpha narrative-rotation strategy (see PRD section 9). Emitted by scripts/build_spec.py from live CoinMarketCap data and consumed by scripts/backtest.py and a Track 1 execution agent.",
+  "type": "object",
+  "required": [
+    "name",
+    "generated_at",
+    "universe",
+    "rebalance",
+    "signal",
+    "selection",
+    "timing",
+    "risk_off",
+    "risk",
+    "sizing",
+    "costs"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": { "method": { "const": "cross_sectional_momentum" } },
+        "required": ["method"]
+      },
+      "then": { "required": ["momentum"] },
+      "else": { "required": ["selected_narratives"] }
+    }
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "method": {
+      "type": "string",
+      "enum": ["narrative_rotation", "cross_sectional_momentum"],
+      "description": "Selection engine: CMC narrative rotation or universe-wide cross-sectional momentum."
+    },
+    "momentum": {
+      "type": "object",
+      "description": "Config for the cross_sectional_momentum method.",
+      "properties": {
+        "lookbacks_days": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 1 },
+        "skip_days": { "type": "integer", "minimum": 0 },
+        "top_n": { "type": "integer", "minimum": 1 },
+        "risk_adjusted": { "type": "boolean" },
+        "narrative_tilt": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "description": "ISO-8601 UTC timestamp of when the spec was built from live data."
+    },
+    "universe": {
+      "type": "object",
+      "required": ["source", "ref"],
+      "properties": {
+        "source": { "type": "string" },
+        "ref": { "type": "string" },
+        "size": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "rebalance": {
+      "type": "object",
+      "required": ["frequency_days", "fill"],
+      "properties": {
+        "frequency_days": { "type": "integer", "minimum": 1 },
+        "fill": { "type": "string", "enum": ["next_open", "close", "same_open"] }
+      },
+      "additionalProperties": false
+    },
+    "signal": {
+      "type": "object",
+      "required": ["source", "rank_by", "top_n_narratives"],
+      "properties": {
+        "source": { "type": "string", "const": "trending_crypto_narratives" },
+        "rank_by": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "confirm_by": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "weights": {
+          "type": "object",
+          "properties": {
+            "perf_7d": { "type": "number" },
+            "perf_30d": { "type": "number" },
+            "confirm_mc_7d": { "type": "number" }
+          },
+          "additionalProperties": false
+        },
+        "exhaustion_filter": {
+          "type": "object",
+          "required": ["perf_24h_below", "perf_30d_above", "penalty"],
+          "properties": {
+            "rule": { "type": "string" },
+            "perf_24h_below": { "type": "number" },
+            "perf_30d_above": { "type": "number" },
+            "penalty": { "type": "number", "minimum": 0, "maximum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "top_n_narratives": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": ["from", "filter", "weight"],
+      "properties": {
+        "from": { "type": "string" },
+        "filter": { "type": "string" },
+        "weight": { "type": "string", "enum": ["equal", "price_change_7d", "inverse_vol"] }
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": ["tool", "skip_if_rsi_above"],
+      "properties": {
+        "tool": { "type": "string" },
+        "skip_if_rsi_above": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "risk_off": {
+      "type": "object",
+      "required": ["tool", "to_cash_if", "fear_greed_min"],
+      "properties": {
+        "tool": { "type": "string" },
+        "to_cash_if": { "type": "string" },
+        "fear_greed_min": { "type": "number", "minimum": 0, "maximum": 100 },
+        "fear_greed_extreme": { "type": "number", "minimum": 0, "maximum": 100 },
+        "trend_ma_days": { "type": "integer", "minimum": 1 },
+        "trend_band": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "risk": {
+      "type": "object",
+      "required": ["max_drawdown", "on_breach"],
+      "properties": {
+        "max_drawdown": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "on_breach": { "type": "string" },
+        "halt_reentry_mode": { "type": "string", "enum": ["next_clear", "cooldown", "regime_reset"] },
+        "halt_cooldown_days": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "sizing": {
+      "type": "object",
+      "required": ["scheme", "max_weight"],
+      "properties": {
+        "scheme": { "type": "string", "enum": ["equal_weight", "inverse_vol"] },
+        "max_weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 },
+        "top_k_per_narrative": { "type": "integer", "minimum": 1 },
+        "no_trade_band": { "type": "number", "minimum": 0, "maximum": 1 },
+        "vol_target": { "type": "number", "minimum": 0 },
+        "vol_lookback_days": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "costs": {
+      "type": "object",
+      "required": ["fee_bps", "slippage_bps"],
+      "properties": {
+        "fee_bps": { "type": "number", "minimum": 0 },
+        "slippage_bps": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "narrative_map_ref": { "type": "string" },
+    "selected_narratives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["rank", "narrative", "score", "tokens"],
+        "properties": {
+          "rank": { "type": "integer", "minimum": 1 },
+          "narrative": { "type": "string", "minLength": 1 },
+          "slug": { "type": ["string", "null"] },
+          "score": { "type": "number" },
+          "perf_7d": { "type": ["number", "null"] },
+          "perf_30d": { "type": ["number", "null"] },
+          "exhausted": { "type": "boolean" },
+          "social_authors": { "type": ["number", "null"] },
+          "tokens": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["symbol", "cmc_id", "binance_pair", "target_weight"],
+              "properties": {
+                "symbol": { "type": "string", "minLength": 1 },
+                "cmc_id": { "type": "integer" },
+                "binance_pair": { "type": "string", "pattern": "USDT$" },
+                "target_weight": { "type": "number", "exclusiveMinimum": 0, "maximum": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": true
+}

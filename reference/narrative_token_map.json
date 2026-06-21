@@ -1,0 +1,763 @@
+{
+  "_meta": {
+    "description": "Frozen narrative -> eligible-token map. Point-in-time snapshot used by the backtest to avoid look-ahead.",
+    "generated_at": "2026-06-20T00:41:16.783374+00:00",
+    "source": "trending_crypto_narratives + CMC categories x eligible_tokens.json",
+    "narrative_count": 5,
+    "eligible_token_count": 149,
+    "expanded_with_categories": true,
+    "dropped": []
+  },
+  "narratives": [
+    {
+      "narrative": "FTX Bankruptcy Estate",
+      "slug": "ftx-bankruptcy-estate",
+      "trending_rank": 1,
+      "category_id": "6437284985f6a3507d5fd57d",
+      "tokens": [
+        {
+          "symbol": "BTC",
+          "cmc_id": 1,
+          "binance_pair": "BTCUSDT",
+          "source": "topCoinList",
+          "price_change_7d": -0.0012565
+        },
+        {
+          "symbol": "ETH",
+          "cmc_id": 1027,
+          "binance_pair": "ETHUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0238
+        },
+        {
+          "symbol": "XRP",
+          "cmc_id": 52,
+          "binance_pair": "XRPUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0027745
+        },
+        {
+          "symbol": "SOL",
+          "cmc_id": 5426,
+          "binance_pair": "SOLUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DOGE",
+          "cmc_id": 74,
+          "binance_pair": "DOGEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "APT",
+          "cmc_id": 21794,
+          "binance_pair": "APTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "FTT",
+          "cmc_id": 4195,
+          "binance_pair": "FTTUSDT",
+          "source": "category"
+        }
+      ]
+    },
+    {
+      "narrative": "Bitcoin Ecosystem",
+      "slug": "bitcoin-ecosystem",
+      "trending_rank": 2,
+      "category_id": "63feda8ad0a19758f3bde124",
+      "tokens": [
+        {
+          "symbol": "BTC",
+          "cmc_id": 1,
+          "binance_pair": "BTCUSDT",
+          "source": "topCoinList",
+          "price_change_7d": -0.0012565
+        },
+        {
+          "symbol": "LINK",
+          "cmc_id": 1975,
+          "binance_pair": "LINKUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0012774
+        },
+        {
+          "symbol": "SKY",
+          "cmc_id": 33038,
+          "binance_pair": "SKYUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0357
+        },
+        {
+          "symbol": "STX",
+          "cmc_id": 4847,
+          "binance_pair": "STXUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PENDLE",
+          "cmc_id": 9481,
+          "binance_pair": "PENDLEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DCR",
+          "cmc_id": 1168,
+          "binance_pair": "DCRUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XPL",
+          "cmc_id": 36645,
+          "binance_pair": "XPLUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "RIF",
+          "cmc_id": 3701,
+          "binance_pair": "RIFUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "RSR",
+          "cmc_id": 3964,
+          "binance_pair": "RSRUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "QTUM",
+          "cmc_id": 1684,
+          "binance_pair": "QTUMUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PUMP",
+          "cmc_id": 36507,
+          "binance_pair": "PUMPUSDT",
+          "source": "category"
+        }
+      ]
+    },
+    {
+      "narrative": "SEC/CFTC Token Taxonomy",
+      "slug": "sec-cftc-token-taxonomy",
+      "trending_rank": 3,
+      "category_id": "69be02c3b419ec42f4a05d52",
+      "tokens": [
+        {
+          "symbol": "BTC",
+          "cmc_id": 1,
+          "binance_pair": "BTCUSDT",
+          "source": "topCoinList",
+          "price_change_7d": -0.001846
+        },
+        {
+          "symbol": "ETH",
+          "cmc_id": 1027,
+          "binance_pair": "ETHUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0236
+        },
+        {
+          "symbol": "XRP",
+          "cmc_id": 52,
+          "binance_pair": "XRPUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0030496
+        },
+        {
+          "symbol": "SOL",
+          "cmc_id": 5426,
+          "binance_pair": "SOLUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DOGE",
+          "cmc_id": 74,
+          "binance_pair": "DOGEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XLM",
+          "cmc_id": 512,
+          "binance_pair": "XLMUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ADA",
+          "cmc_id": 2010,
+          "binance_pair": "ADAUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "LINK",
+          "cmc_id": 1975,
+          "binance_pair": "LINKUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "BCH",
+          "cmc_id": 1831,
+          "binance_pair": "BCHUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "HBAR",
+          "cmc_id": 4642,
+          "binance_pair": "HBARUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "LTC",
+          "cmc_id": 2,
+          "binance_pair": "LTCUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SHIB",
+          "cmc_id": 5994,
+          "binance_pair": "SHIBUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "AVAX",
+          "cmc_id": 5805,
+          "binance_pair": "AVAXUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DOT",
+          "cmc_id": 6636,
+          "binance_pair": "DOTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "APT",
+          "cmc_id": 21794,
+          "binance_pair": "APTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XTZ",
+          "cmc_id": 2011,
+          "binance_pair": "XTZUSDT",
+          "source": "category"
+        }
+      ]
+    },
+    {
+      "narrative": "US Strategic Crypto Reserve",
+      "slug": "us-strategic-crypto-reserve",
+      "trending_rank": 4,
+      "category_id": "67c514446feebc2b5bcc23f1",
+      "tokens": [
+        {
+          "symbol": "BTC",
+          "cmc_id": 1,
+          "binance_pair": "BTCUSDT",
+          "source": "topCoinList",
+          "price_change_7d": -0.0012565
+        },
+        {
+          "symbol": "ETH",
+          "cmc_id": 1027,
+          "binance_pair": "ETHUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0238
+        },
+        {
+          "symbol": "XRP",
+          "cmc_id": 52,
+          "binance_pair": "XRPUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0027745
+        },
+        {
+          "symbol": "SOL",
+          "cmc_id": 5426,
+          "binance_pair": "SOLUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ADA",
+          "cmc_id": 2010,
+          "binance_pair": "ADAUSDT",
+          "source": "category"
+        }
+      ]
+    },
+    {
+      "narrative": "Binance Ecosystem",
+      "slug": "binance-ecosystem",
+      "trending_rank": 5,
+      "category_id": "6825fdf884b53e60df77be0a",
+      "tokens": [
+        {
+          "symbol": "BTC",
+          "cmc_id": 1,
+          "binance_pair": "BTCUSDT",
+          "source": "topCoinList",
+          "price_change_7d": -0.0012565
+        },
+        {
+          "symbol": "ETH",
+          "cmc_id": 1027,
+          "binance_pair": "ETHUSDT",
+          "source": "topCoinList",
+          "price_change_7d": 0.0238
+        },
+        {
+          "symbol": "BNB",
+          "cmc_id": 1839,
+          "binance_pair": "BNBUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "USDC",
+          "cmc_id": 3408,
+          "binance_pair": "USDCUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XRP",
+          "cmc_id": 52,
+          "binance_pair": "XRPUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SOL",
+          "cmc_id": 5426,
+          "binance_pair": "SOLUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "TRX",
+          "cmc_id": 1958,
+          "binance_pair": "TRXUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DOGE",
+          "cmc_id": 74,
+          "binance_pair": "DOGEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ZEC",
+          "cmc_id": 1437,
+          "binance_pair": "ZECUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XLM",
+          "cmc_id": 512,
+          "binance_pair": "XLMUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ADA",
+          "cmc_id": 2010,
+          "binance_pair": "ADAUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "LINK",
+          "cmc_id": 1975,
+          "binance_pair": "LINKUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "USD1",
+          "cmc_id": 36148,
+          "binance_pair": "USD1USDT",
+          "source": "category"
+        },
+        {
+          "symbol": "USDE",
+          "cmc_id": 29470,
+          "binance_pair": "USDEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "BCH",
+          "cmc_id": 1831,
+          "binance_pair": "BCHUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "HBAR",
+          "cmc_id": 4642,
+          "binance_pair": "HBARUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "LTC",
+          "cmc_id": 2,
+          "binance_pair": "LTCUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SUI",
+          "cmc_id": 20947,
+          "binance_pair": "SUIUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "NEAR",
+          "cmc_id": 6535,
+          "binance_pair": "NEARUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SHIB",
+          "cmc_id": 5994,
+          "binance_pair": "SHIBUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "AVAX",
+          "cmc_id": 5805,
+          "binance_pair": "AVAXUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XAUT",
+          "cmc_id": 5176,
+          "binance_pair": "XAUTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "TAO",
+          "cmc_id": 22974,
+          "binance_pair": "TAOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "WLD",
+          "cmc_id": 13502,
+          "binance_pair": "WLDUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "UNI",
+          "cmc_id": 7083,
+          "binance_pair": "UNIUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PAXG",
+          "cmc_id": 4705,
+          "binance_pair": "PAXGUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "WLFI",
+          "cmc_id": 33251,
+          "binance_pair": "WLFIUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ONDO",
+          "cmc_id": 21159,
+          "binance_pair": "ONDOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ASTER",
+          "cmc_id": 36341,
+          "binance_pair": "ASTERUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DOT",
+          "cmc_id": 6636,
+          "binance_pair": "DOTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "RLUSD",
+          "cmc_id": 34387,
+          "binance_pair": "RLUSDUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SKY",
+          "cmc_id": 33038,
+          "binance_pair": "SKYUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ICP",
+          "cmc_id": 8916,
+          "binance_pair": "ICPUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ETC",
+          "cmc_id": 1321,
+          "binance_pair": "ETCUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PEPE",
+          "cmc_id": 24478,
+          "binance_pair": "PEPEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "AAVE",
+          "cmc_id": 7278,
+          "binance_pair": "AAVEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "U",
+          "cmc_id": 39120,
+          "binance_pair": "UUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "MORPHO",
+          "cmc_id": 34104,
+          "binance_pair": "MORPHOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ATOM",
+          "cmc_id": 3794,
+          "binance_pair": "ATOMUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "RENDER",
+          "cmc_id": 5690,
+          "binance_pair": "RENDERUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "QNT",
+          "cmc_id": 3155,
+          "binance_pair": "QNTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ALGO",
+          "cmc_id": 4030,
+          "binance_pair": "ALGOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ENA",
+          "cmc_id": 30171,
+          "binance_pair": "ENAUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "\u5e01\u5b89\u4eba\u751f",
+          "cmc_id": 38590,
+          "binance_pair": "\u5e01\u5b89\u4eba\u751fUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "JST",
+          "cmc_id": 5488,
+          "binance_pair": "JSTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "JUP",
+          "cmc_id": 29210,
+          "binance_pair": "JUPUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "FIL",
+          "cmc_id": 2280,
+          "binance_pair": "FILUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ARB",
+          "cmc_id": 11841,
+          "binance_pair": "ARBUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "APT",
+          "cmc_id": 21794,
+          "binance_pair": "APTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "NIGHT",
+          "cmc_id": 39064,
+          "binance_pair": "NIGHTUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "NEXO",
+          "cmc_id": 2694,
+          "binance_pair": "NEXOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "INJ",
+          "cmc_id": 7226,
+          "binance_pair": "INJUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "TUSD",
+          "cmc_id": 2563,
+          "binance_pair": "TUSDUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PUMP",
+          "cmc_id": 36507,
+          "binance_pair": "PUMPUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "DASH",
+          "cmc_id": 131,
+          "binance_pair": "DASHUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "CAKE",
+          "cmc_id": 7186,
+          "binance_pair": "CAKEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "TRUMP",
+          "cmc_id": 35336,
+          "binance_pair": "TRUMPUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "FET",
+          "cmc_id": 3773,
+          "binance_pair": "FETUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PENGU",
+          "cmc_id": 34466,
+          "binance_pair": "PENGUUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "VET",
+          "cmc_id": 3077,
+          "binance_pair": "VETUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "VIRTUAL",
+          "cmc_id": 29420,
+          "binance_pair": "VIRTUALUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "BONK",
+          "cmc_id": 23095,
+          "binance_pair": "BONKUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SEI",
+          "cmc_id": 23149,
+          "binance_pair": "SEIUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "LUNC",
+          "cmc_id": 4172,
+          "binance_pair": "LUNCUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "JTO",
+          "cmc_id": 28541,
+          "binance_pair": "JTOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "FDUSD",
+          "cmc_id": 26081,
+          "binance_pair": "FDUSDUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "TIA",
+          "cmc_id": 22861,
+          "binance_pair": "TIAUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ZRO",
+          "cmc_id": 26997,
+          "binance_pair": "ZROUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "STX",
+          "cmc_id": 4847,
+          "binance_pair": "STXUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "SUN",
+          "cmc_id": 10529,
+          "binance_pair": "SUNUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "CRV",
+          "cmc_id": 6538,
+          "binance_pair": "CRVUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "ETHFI",
+          "cmc_id": 29814,
+          "binance_pair": "ETHFIUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "KITE",
+          "cmc_id": 38828,
+          "binance_pair": "KITEUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "PYTH",
+          "cmc_id": 28177,
+          "binance_pair": "PYTHUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "GNO",
+          "cmc_id": 1659,
+          "binance_pair": "GNOUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "XTZ",
+          "cmc_id": 2011,
+          "binance_pair": "XTZUSDT",
+          "source": "category"
+        },
+        {
+          "symbol": "CFX",
+          "cmc_id": 7334,
+          "binance_pair": "CFXUSDT",
+          "source": "category"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Secrets
+.env
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Data caches / generated artifacts
+strategy_spec.json
+.cache/
+
+# Internal notes / docs (not tracked)
+docs/
