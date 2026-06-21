@@ -38,9 +38,10 @@ The skill produces two artifacts:
    walk-forward (in-sample vs out-of-sample), cost-sensitivity, and a rotation
    timeline (which tokens were held when).
 
-The full research arc (why narrative rotation was demoted, the look-ahead audit,
-universe correction, and parameter tuning) is documented in
-[`findings.md`](findings.md).
+The strategy reflects a full research arc: narrative rotation alone was a weak,
+noisy signal, so it was rebuilt as risk-managed momentum and the CMC narrative
+signal was fed back in as a score tilt (which measurably improved return, Sharpe,
+and drawdown), alongside a universe correction and a look-ahead/bias audit.
 
 ## When to use
 
@@ -116,7 +117,7 @@ klines + frozen narrative→token map, drives the backtest with no look-ahead).
    reconstructs each narrative basket from constituent klines and rotates the
    leaders. Both return an equity series + trade log with no look-ahead and no
    NaNs. Start from **2021** so BTC's 200-DMA is live on 2022-01-01 (avoids a
-   warmup free-pass through the 2022 bear — see `findings.md` §7).
+   warmup free-pass through the 2022 bear).
 
 4. **Render the report.**
 
@@ -143,8 +144,7 @@ klines + frozen narrative→token map, drives the backtest with no look-ahead).
 
 - This is a **risk-managed / drawdown-control** strategy, not a "beat BTC on
   return" strategy. Over a full cycle it trails BTC buy-and-hold on raw return
-  but with ~1/4 the max drawdown. Report the risk-adjusted framing honestly
-  (see `findings.md` §6).
+  but with ~1/4 the max drawdown. Report the risk-adjusted framing honestly.
 - CMC OHLCV history is gated (403) on the Agent Hub plan and narratives are
   live-only — hence the Binance reconstruction with a **frozen**
   `reference/narrative_token_map.json` to keep the backtest point-in-time.
